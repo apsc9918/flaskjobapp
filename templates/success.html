@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Submitted Successfully</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .success-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .success-icon {
+            color: #28a745;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .success-title {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .success-message {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .application-details {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .details-title {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .detail-item {
+            margin-bottom: 12px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background: #0056b3;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-header">
+            <div class="success-icon">✓</div>
+            <h1 class="success-title">Application Submitted Successfully!</h1>
+            <p class="success-message">Thank you for applying to join our team. We have received your application and will review it shortly. Our hiring team will contact you if your qualifications match our requirements.</p>
+        </div>
+
+        <div class="application-details">
+            <h2 class="details-title">Application Details</h2>
+            <div class="detail-item">
+                <span class="detail-label">Position:</span>
+                <span>{{ job.job_title }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Name:</span>
+                <span>{{ application.applicant_name }}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Email:</span>
+                <span>{{ application.email }}</span>
+            </div>
+            {% if application.phone %}
+            <div class="detail-item">
+                <span class="detail-label">Phone:</span>
+                <span>{{ application.phone }}</span>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="text-center">
+            <a href="/" class="home-button">Return to Home</a>
+        </div>
+    </div>
+</body>
+</html>
